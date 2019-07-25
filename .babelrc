@@ -7,7 +7,7 @@
                 "corejs": "3.0.0"
             }
         ],
-        "@babel/preset-react"
+        ["@babel/preset-react"]
     ],
     "plugins": [
         "@babel/plugin-proposal-object-rest-spread",

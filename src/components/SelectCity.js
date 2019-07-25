@@ -7,7 +7,9 @@ import WeatherDisplay from './WeatherDisplay';
 import Image from "../assets/images/logo.svg";
 import Background from "../assets/images/welcome-mat/bg-info@2x.png";
 import DropImage from "../assets/images/themes/oneSalesforce/banner-user-default.png";
-
+/*
+Create styles for header, dropdown and Salesforce
+*/
 const salesforce = {
     position: "absolute",
     top: 20,
@@ -37,6 +39,11 @@ const DropDownList = {
 };
 
 class SelectCity extends React.Component {
+    /*
+    Constructor:
+    Define state and bind seletcity so it 
+    can access props and state.
+    */
     constructor(props) {
         super(props);
         this.state = {
@@ -44,16 +51,22 @@ class SelectCity extends React.Component {
         };
         this.selectCity.bind(this);
     }
-
-    componentDidMount() {
-    }
-
+    /*
+    Everytime user selects city from dropdown
+    onSubmit is called.
+    Value of city is updated in state. Everytime 
+    state is changed, component will re-render
+    */
     onSubmit = ((e) => {
         this.setState({
             selectedCity: e,
         });
     })
 
+    /*
+    SelectCity:
+    return Dropdown and which is rendered using render()
+    */
     selectCity = (() => {
         return (
             <Dropdown
@@ -66,7 +79,15 @@ class SelectCity extends React.Component {
             />
         );
     })
+    /*
+        Screen will contain three components
+        Header, Dropdown and Weather Display 
+        WeatherDisplay will only be rendered 
+        when state.selectedCity is not undefined
 
+        Every time state is updated, components will
+        be re-rendered.
+    */
     render() {
         return (
             <div style={{flex:1 ,alignItem: "center",}}>
@@ -85,6 +106,10 @@ class SelectCity extends React.Component {
     }
 
 };
+/*
+    props validation:
+    Verify if cityList is an array or not.
+*/
 SelectCity.propTypes={
     cityList: PropTypes.array
 };

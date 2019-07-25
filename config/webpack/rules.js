@@ -1,14 +1,21 @@
+import path from 'path';
 module.exports = [
     {
-        test: /\.js$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader'
-        }
+        loader: ['babel-loader']
+    },
+    {
+        test: /\.jsx?$/,
+        include: [
+            path.join(__dirname, 'public/src'),
+            path.join(__dirname, 'node_modules/@salesforce/design-system-react'),
+        ],
+        loader: ['babel-loader'],
     },
     {
         test: /\.css$/,
-        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
     }
     ,
     {
@@ -35,10 +42,10 @@ module.exports = [
         include: /src/,
         loader: 'css-loader',
         query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]'
         }
-      },
+    },
     {
         test: /\.scss$/,
         exclude: /node_modules/,
