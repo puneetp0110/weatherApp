@@ -27,12 +27,14 @@ export default class WeekWeather extends React.Component {
     constructor(props) {
         super(props);
     }
+
     /*
         toDo: Future Work
     */
     onTemperatureUnitButtonClick = (() => {
         
     })
+
     /*
         color => color of the background (constant as it wont change)
         weekWeather.weather.list => contains data for 7 days in array 
@@ -42,19 +44,19 @@ export default class WeekWeather extends React.Component {
     render() {
         const { color } = this.props;
         return (
-                <div className="week-container" style={container}>
-                    <div className="week-all-days" style={weatherAllDays}>
-                        {this.props.weekWeather.weather.list.map((item, i) => {
-                            const style = {
-                                backgroundColor: shadeColor(color, -(i + 1) / 20)
-                            };
-                            return (<div key={i} className="week-one-day" style={style}>
-                                <WeatherItem theme="small" data={item} country={this.props.weekWeather.weather.city.country} city={this.props.weekWeather.weather.city.name} />
-                            </div>
-                            );
-                        })}
-                    </div>
+            <div className="week-container" style={container}>
+                <div className="week-all-days" style={weatherAllDays}>
+                    {this.props.weekWeather.weather.list.map((item, i) => {
+                        const style = {
+                            backgroundColor: shadeColor(color, -(i + 1) / 20)
+                        };
+                        return (<div key={i} className="week-one-day" style={style}>
+                            <WeatherItem theme="small" data={item} country={this.props.weekWeather.weather.city.country} city={this.props.weekWeather.weather.city.name} />
+                        </div>
+                        );
+                    })}
                 </div>
+            </div>
         );
     }
 }

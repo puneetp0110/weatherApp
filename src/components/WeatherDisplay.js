@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from "prop-types";
 import randomColor from "randomcolor";
+import {Checkbox} from "@salesforce/design-system-react";
 import { getWeather } from './weather';
 import WeekWeather from './WeekWeather';
-import {Checkbox} from "@salesforce/design-system-react";
 /*
     Styles for displaying Weather for entire week
 */
@@ -28,7 +28,7 @@ const toggleButton = {
     position: "absolute",
     top: "30%",
     left:"5%"
-}
+};
 class WeatherDisplay extends React.Component {
     /*
         State:
@@ -49,8 +49,9 @@ class WeatherDisplay extends React.Component {
             country: "",
             unit:"Metric"
         };
-        this.onTemperatureUnitButtonClick = this.onTemperatureUnitButtonClick.bind(this)
+        this.onTemperatureUnitButtonClick = this.onTemperatureUnitButtonClick.bind(this);
     }
+
     /*
         Still under implementation
         Expected behaviour: User selects either Celcius and Farenhite 
@@ -59,8 +60,9 @@ class WeatherDisplay extends React.Component {
     onTemperatureUnitButtonClick = (() => {
         this.setState({
             unit:""
-        })
+        });
     })
+
     /*
         Call to getWeather with selectedCity as argument.
         Make it a promise as it asyncronous. 
@@ -85,6 +87,7 @@ class WeatherDisplay extends React.Component {
             });
         });
     }
+
     /*
         render:
         Checkbox => to change between Celcius and Farenhite (No props)
@@ -98,7 +101,7 @@ class WeatherDisplay extends React.Component {
     render() {
         return (
             <Container className="weather-card">
-            <div style={toggleButton}>
+                <div style={toggleButton}>
                     <Checkbox
                         labels={{label:"Celcius"}}
                         id="checkbox-toggle"

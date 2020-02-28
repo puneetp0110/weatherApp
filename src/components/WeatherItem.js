@@ -11,8 +11,9 @@ export default class WeatherItem extends React.Component {
         super(props);
         this.state={
             response:""
-        }
+        };
     }
+
     /*
         getDerivedStateFromProps:
             Convert all props to state
@@ -29,6 +30,7 @@ export default class WeatherItem extends React.Component {
             icon,
         };
     }
+
     /*
         Used to render days
     */
@@ -45,6 +47,7 @@ export default class WeatherItem extends React.Component {
             {Moment(this.props.data.dt * 1000).calendar(null, days)}
         </p>;
     }
+
     /*
         render
             temperature => Temperature of that specific day.

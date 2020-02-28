@@ -51,6 +51,7 @@ class SelectCity extends React.Component {
         };
         this.selectCity.bind(this);
     }
+
     /*
     Everytime user selects city from dropdown
     onSubmit is called.
@@ -79,6 +80,7 @@ class SelectCity extends React.Component {
             />
         );
     })
+
     /*
         Screen will contain three components
         Header, Dropdown and Weather Display 
