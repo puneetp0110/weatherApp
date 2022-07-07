@@ -85,7 +85,7 @@
         "@salesforce/design-system-react": "^0.10.7",
         "che-react-number-easing": "^0.1.1",
         "cross-env": "^5.2.0",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "path": "^0.12.7",
         "prop-types": "^15.7.2",
         "randomcolor": "^0.5.4",
